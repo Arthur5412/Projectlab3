@@ -1,0 +1,17 @@
+body{
+  background: silver;
+  
+ }
+ img {
+     margin :auto;
+     background-size: contain;
+     width: 160px;
+     height: 160px;
+     border: 2px solid;
+     color: black;
+     resize: both;
+     overflow: scroll;
+     
+ 
+ }
+ 
