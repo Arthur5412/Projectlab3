@@ -1,98 +1,108 @@
 'use strict';
-correctAnswers=0;
-var name=prompt('what your name?');
-var realName=name.toUpperCase();
-var responseAnswer='Hello ' + realName + ' we are going to play a game';
-console.log(responseAnswer);
-alert(responseAnswer);
 
-var pet=prompt('Have i ever owned a dog');
-var realPet=pet.toUpperCase();
-if(realPet ==='YES'|| realPet === 'Y')
-{
-    console.log(realPet)
-    alert('you are right');
-} else if (realPet === 'NO'|| realPet =='N') {
-    console.log(realPet);
- alert('you are not right') ;
+var correctAnswers = 0;
+
+var game = prompt('Lets play a game! Whats your name?');
+console.log(game.toUpperCase());
+var gameresponse = ' Awesome ' + game + ' lets start! ';
+alert(gameresponse);
+
+
+
+var color = prompt('Is my favourite color bule?');
+console.log(color.toUpperCase());
+var colorYes = 'My favourite color is black';
+var colorNo = 'you are not right';
+
+if (color.toUpperCase() === 'YES') {
+  alert(colorYes);
+} else {
+  correctAnswers++;
+  alert(colorNo);
 }
 
-var lived=prompt('Have i ever lived in Tacoma?');
-var haveLived=lived.toUpperCase();
-if(haveLived ==='YES'|| haveLived === 'Y')
-{
-    console.log(haveLived);
-    alert('you are right');
-} else if (haveLived === 'NO'|| haveLived ==='N') {
-    console.log(haveLived);
- alert('you are not right') ;
+
+var pet = prompt('Do I have a pet?');
+console.log(pet.toUpperCase());
+var petYes = 'Yes! I got a pet and his name is gulliver';
+var petNo = 'I actually you are not right';
+
+if (pet.toUpperCase() === 'YES') {
+  correctAnswers++;
+  alert(petYes);
+} else {
+  alert(petNo);
 }
 
-var color=prompt('Is my favourite color blue');
-var favColor=color.toUpperCase();
-if(favColor ==='YES'|| favColor === 'Y')
-{
-    console.log(favColor);
-    alert('you are right');
-} else if (favColor === 'NO'|| favColor ==='N') {
-    console.log(favColor)
- alert('you are not right') ;
+
+var skydived = prompt('Have I ever skydived?');
+console.log(skydived.toUpperCase());
+var skydivedyes = 'i have never skydived';
+var skydivedno = 'this time i dont agree with you ';
+
+if (skydived.toUpperCase() === 'yes') {
+  correctAnswers++;
+  alert(skydivedyes);
+} else {
+  alert(skydivedno);
 }
 
-var sport=prompt('Is my favourite sport football');
-var favSport=sport.toUpperCase();
-if(favSport ==='YES'|| favSport === 'Y')
-{
-    console.log(favSport);
-    alert('you are right');
-} else if (favSport === 'NO'|| favSport ==='N') {
-    console.log(favSport);
- alert('you are not right') ;
+var run = prompt('Have i ever run 11 miles in 1 hours?');
+console.log(run.toUpperCase());
+var runYes = 'I have run those miles';
+var runNo = 'You are close but ,i disagree.';
+
+if (run.toUpperCase() === 'YES') {
+  correctAnswers++;
+  alert(runYes);
+} else {
+  alert(runNo);
 }
 
-var i = 0;
-var number = 3;
-while (i < 4) {
-var myNumber = prompt('What is my favorite number?');
-  i++;
-  
-  if(myNumber < number){
-	alert('That guess is too low!');
-  }else if (myNumber > number) {
-  alert('that guess is too high!');
+
+var tries = 0;
+var myFavoriteNumber = 3;
+while (tries < 4) {
+  var myFavoriteNumberAnswer = prompt('What is my favorite number?');
+  tries = tries + 1;
+
+  if(myFavoriteNumberAnswer < myFavoriteNumber){
+    alert('That guess is too low!');
+  }else if (myFavoriteNumberAnswer > myFavoriteNumber) {
+    alert('that guess is too high!');
   }else{
-	correctAnswers++;
- alert('That guess is correct! My favority number is ' + myNumber);
+    correctAnswers++;
+    alert('That guess is correct! My favority number is ' + myFavoriteNumber);
     break;
   }
 
-  }
+}
 
 
-  var states = ['minnesota', 'newyork', 'washington', 'idaho'];
+
+var favmusic = ['hip hop', 'country', 'electronic', 'house'];
 
 
-  var i = 0;
-  while (i < 6) {
-    var myStates = prompt('Guess the states i have lived in?');
-    i++;
-    var correctAnswer = false;
-    for(var j=0;j<states.length;j++){
-      if (states === myStates[j]) {
-        correctAnswers = true;
-        break;
-      }
-    }
-    
-    if(correctAnswer){
-      correctAnswers++;
-      alert('correct! ' + states.join(", ") + ' you guessed correct!');
+var tries = 0;
+while (tries < 6) {
+  var fav = prompt('What is my favorite music?');
+  tries = tries + 1;
+  var correctAnswer = false;
+  for(var i=0;i<favmusic.length;i++){
+    if (fav === favmusic[i]) {
+      correctAnswer = true;
       break;
     }
-    
-    alert('that is wrong');
-    
-  
   }
-alert(game + " you got " + correctAnswers + " correct answers out of 7! Thanks for playing! ");
-alert('this is where it all comes to the end thank you for your sport ' + realName.toLowerCase());
+
+  if(correctAnswer){
+    correctAnswers++;
+    alert('That is right! ' + favmusic.join(', ') + ' these are all my choices and you guessed right!');
+    break;
+  }
+
+  alert('oops, that is wrong');
+
+
+}
+alert(game + ' you got ' + correctAnswers + ' correct answers out of 7! Thanks for playing! ');
